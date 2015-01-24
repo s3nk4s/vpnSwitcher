@@ -36,6 +36,14 @@ def homepage():
     country = getCountry()
     ovpnFiles = getovpnFiles()
     return render_template("index.html", ovpnFiles=ovpnFiles, country=country)
+
+@app.route('/_runCommand')
+def runCommand():
+    destCountry =  request.args.get('destCountry', 0, type=str)
     
+@app.route('/_add_numbers')
+def addnumbers():
+	return jsonify(ss='s')
+	
 if __name__ == "__main__":
 	app.run(host='0.0.0.0')
